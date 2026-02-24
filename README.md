@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+[![R-CMD-check](https://github.com/lukewarkentin/fishr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/lukewarkentin/fishr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of fishr is to provide functions for calculating Catch Per Unit
