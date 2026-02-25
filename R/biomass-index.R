@@ -10,7 +10,7 @@
 #'
 #' @examples
 #' salmon_cpue <- cpue(catch = 2, effort =2 )
-#' biomass( salmon_cpue, 3)
-biomass <- function(cpue, area_swept) {
+#' biomass_index( salmon_cpue, 3)
+biomass_index <- function(cpue, area_swept) {
   cpue * area_swept
 }

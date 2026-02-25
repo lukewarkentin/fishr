@@ -4,6 +4,15 @@ test_that("cpue matches reference data", {
   expect_equal(result, reference_data$expected_cpue)
 })
 
+test_that("cpue provides informative message when verbose", {
+  expect_message(
+    cpue(c(100, 200), c(10, 20), verbose = TRUE),
+    "Processing 2 records."
+  )
+  expect_no_message(
+    cpue(c(100, 200), c(10, 20))
+  )
+})
 
 test_that("cpue calculates simple ratio correctly", {
   expect_equal(cpue(catch = 100, effort = 10), 10)
@@ -38,4 +47,19 @@ test_that("cpue handles zero catch and missing data", {
 
   expect_true(is.na(cpue(NA_real_, 10)))
   expect_true(is.na(cpue(100, NA_real_)))
+})
+
+
+# Snapshot tests
+
+test_that("cpue errors when input is not numeric", {
+  expect_snapshot(
+    cpue("five", 10),
+    error = TRUE
+  )
+})
+
+test_that("cpue warns when catch and effore lines differ", {
+  expect_snapshot(cpue(c(100, 200, 300), c(10, 20)))
+  expect_no_warning(cpue(c(100, 200, 300), c(10, 20, 30)))
 })
