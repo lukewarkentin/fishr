@@ -18,13 +18,19 @@ You can install the development version of fishr from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("yourname/fishr")
+devtools::install_github("lukewarkentin/fishr")
 ```
 
 ## Example usage
 
 ``` r
-library(fishr)
+#library(fishr)
+devtools::load_all()
+```
+
+    ## ℹ Loading fishr
+
+``` r
 cpue(catch = 100, effort = 10)
 ```
 
@@ -36,3 +42,16 @@ cpue(catch = 100, effort = 10, gear_factor = 0.5)
 ```
 
     ## [1] 5
+
+## highlights / notes to remember
+
+- What is the helper to install the virtual local version of the
+  development package in the readme so it knits?
+- Alt+down: move a line
+- switch() - use instead of ifelse() or if() statements.
+- match.arg() for a vector of character, match first or belonging to.
+- Using air formatter
+- R-CMD-check.yaml for auto checking - use_github_action()
+- multiple && for if statements
+- use @noRd tag in R function code instead of @export for utility
+  functions that you don’t want the user to see
