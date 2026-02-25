@@ -28,6 +28,7 @@ devtools::install_github("lukewarkentin/fishr")
 
 ``` r
 #library(fishr)
+#devtools::build_readme()
 devtools::load_all()
 ```
 
@@ -50,6 +51,8 @@ cpue(catch = 100, effort = 10, gear_factor = 0.5)
 
 - `@inheritParams` !!! ( also `@inheritParams pkg::function` to use from
   other packages )
+- `[cpue()]` or `[fishr::cpue()]` to link to function documentation
+  within the package, or `@seealso` tag
 - Run `devtools::build_readme()` so that you don’t have to install
   package to knit readme
 - Alt+down: move a line
@@ -61,3 +64,9 @@ cpue(catch = 100, effort = 10, gear_factor = 0.5)
 - use `@noRd` tag in R function code instead of `@export` for utility
   functions that you don’t want the user to see
 - `withr::local_seed(67)` to set seed only within function call
+
+## debugging
+
+- `browser()` for writing/debugging.
+- Error inspector option
+- `rlang::last_trace()` and `rlang::last_error()`
