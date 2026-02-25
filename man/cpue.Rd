@@ -4,7 +4,12 @@
 \alias{cpue}
 \title{Calculate catch per unit effort (CPUE)}
 \usage{
-cpue(catch, effort, gear_factor = 1, verbose = FALSE)
+cpue(
+  catch,
+  effort,
+  gear_factor = 1,
+  verbose = getOption("fishr.verbose", default = FALSE)
+)
 }
 \arguments{
 \item{catch}{Numeric vector of catch}
