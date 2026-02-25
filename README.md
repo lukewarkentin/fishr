@@ -25,6 +25,9 @@ devtools::install_github("lukewarkentin/fishr")
 
 ``` r
 #library(fishr)
+
+#devtools::build_readme()
+
 devtools::load_all()
 ```
 
@@ -45,8 +48,10 @@ cpue(catch = 100, effort = 10, gear_factor = 0.5)
 
 ## highlights / notes to remember
 
-- What is the helper to install the virtual local version of the
-  development package in the readme so it knits?
+- @inheritParams !!! ( also @inheritParams pkg::function to use from
+  other packages )
+- Run `devtools::build_readme()` so that you don’t have to install
+  package to knit readme
 - Alt+down: move a line
 - switch() - use instead of ifelse() or if() statements.
 - match.arg() for a vector of character, match first or belonging to.
@@ -55,3 +60,4 @@ cpue(catch = 100, effort = 10, gear_factor = 0.5)
 - multiple && for if statements
 - use @noRd tag in R function code instead of @export for utility
   functions that you don’t want the user to see
+- withr::local_seed(67)
