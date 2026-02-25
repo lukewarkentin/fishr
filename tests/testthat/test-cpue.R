@@ -1,3 +1,10 @@
+test_that("cpue matches reference data", {
+  result <- cpue(reference_data$catch, reference_data$effort)
+
+  expect_equal(result, reference_data$expected_cpue)
+})
+
+
 test_that("cpue calculates simple ratio correctly", {
   expect_equal(cpue(catch = 100, effort = 10), 10)
   expect_equal(cpue(catch = 50, effort = 2), 25)
