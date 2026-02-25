@@ -35,9 +35,19 @@ biomass_index(
 A numeric vector of biomass index values
 }
 \description{
-Calculate biomass index
+See \code{\link[=cpue]{cpue()}} for more details.
+}
+\details{
+Two modes of use:
+\itemize{
+\item Provide \code{cpue} directly for a simple calculation.
+\item Provide \code{catch} and \code{effort} to compute CPUE first, then scale by area.
+}
 }
 \examples{
 salmon_cpue <- cpue(catch = 2, effort =2 )
 biomass_index( salmon_cpue, 3)
+}
+\seealso{
+See \code{\link[=cpue]{cpue()}} or \link[=cpue]{CPUE function}
 }

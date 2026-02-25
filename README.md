@@ -48,16 +48,24 @@ cpue(catch = 100, effort = 10, gear_factor = 0.5)
 
 ## highlights / notes to remember
 
-- @inheritParams !!! ( also @inheritParams pkg::function to use from
+- `@inheritParams` !!! ( also `@inheritParams pkg::function` to use from
   other packages )
+- `[cpue()]` or `[fishr::cpue()]` to link to function documentation
+  within the package, or `@seealso` tag
 - Run `devtools::build_readme()` so that you don’t have to install
   package to knit readme
 - Alt+down: move a line
-- switch() - use instead of ifelse() or if() statements.
-- match.arg() for a vector of character, match first or belonging to.
+- `switch()` - use instead of ifelse() or if() statements.
+- `match.arg()` for a vector of character, match first or belonging to.
 - Using air formatter
-- R-CMD-check.yaml for auto checking - use_github_action()
+- R-CMD-check.yaml for auto checking - `use_github_action()`
 - multiple && for if statements
-- use @noRd tag in R function code instead of @export for utility
+- use `@noRd` tag in R function code instead of `@export` for utility
   functions that you don’t want the user to see
-- withr::local_seed(67)
+- `withr::local_seed(67)` set a seed within a function environment
+
+## debugging
+
+- `browser()` for writing/debugging.
+- Error inspector option
+- `rlang::last_trace()` and `rlang::last_error()`
