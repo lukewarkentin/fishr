@@ -1,7 +1,7 @@
 # gets run before other tests
 
 generate_fishing_data <- function(n = 10) {
-  set.seed(67)
+  withr::local_seed(67)
 
   data.frame(
     catch = runif(n, 10, 500),

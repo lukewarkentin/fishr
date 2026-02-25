@@ -4,26 +4,50 @@
 \alias{biomass_index}
 \title{Calculate biomass index}
 \usage{
-biomass_index(cpue = NULL, area_swept, catch = NULL, effort = NULL, ...)
+biomass_index(
+  cpue = NULL,
+  area_swept,
+  catch = NULL,
+  effort = NULL,
+  verbose = getOption("fishr.verbose", default = FALSE),
+  ...
+)
 }
 \arguments{
 \item{cpue}{Numeric vector of CPUE values}
 
 \item{area_swept}{Numeric vector of area swept ( e.g., km^2)}
 
-\item{catch}{Numeric}
+\item{catch}{Numeric vector of catch}
 
-\item{effort}{Numeric}
+\item{effort}{Numeric vector of effort}
 
-\item{...}{arguments passed to CPUE}
+\item{verbose}{Logical, if TRUE, prints messaging. Default is FALSE}
+
+\item{...}{
+  Arguments passed on to \code{\link[=cpue]{cpue}}
+  \describe{
+    \item{\code{gear_factor}}{Numeric vector for gear standardize}
+    \item{\code{method}}{Character; one of "ratio" or "log".}
+  }}
 }
 \value{
 A numeric vector of biomass index values
 }
 \description{
-Calculate biomass index
+See \code{\link[=cpue]{cpue()}} for more details.
+}
+\details{
+Two modes of use:
+\itemize{
+\item Provide \code{cpue} directly for a simple calculation.
+\item Provide \code{catch} and \code{effort} to compute CPUE first, then scale by area.
+}
 }
 \examples{
 salmon_cpue <- cpue(catch = 2, effort =2 )
 biomass_index( salmon_cpue, 3)
+}
+\seealso{
+See \code{\link[=cpue]{cpue()}} or \link[=cpue]{CPUE function}
 }
