@@ -13,6 +13,8 @@ output: github_document
 [![R-CMD-check](https://github.com/lukewarkentin/fishr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/lukewarkentin/fishr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
+**This is a test package for an R packages course! It is not an actualy package to use!**
+
 The goal of fishr is to provide functions for calculating Catch Per Unit Effort (CPUE),
 a fundamental metric in fisheries science.
 
@@ -30,9 +32,6 @@ devtools::install_github("lukewarkentin/fishr")
 ```{r example}
 
 #library(fishr)
-
-#devtools::build_readme()
-
 devtools::load_all()
 cpue(catch = 100, effort = 10)
 
@@ -43,23 +42,18 @@ cpue(catch = 100, effort = 10, gear_factor = 0.5)
 
 ## highlights / notes to remember
 
-- `@inheritParams` !!! ( also `@inheritParams pkg::function` to use from other packages )
-- `[cpue()]` or `[fishr::cpue()]` to link to function documentation within the package, or `@seealso` tag
-- Run `devtools::build_readme()` so that you don't have to install package to knit readme
+- `@inheritParams` !!! ( also `@inheritParams pkg::function` to use from
+  other packages )
+- Run `devtools::build_readme()` so that you don’t have to install
+  package to knit readme
 - Alt+down: move a line
-- `switch()` - use instead of ifelse() or if() statements. 
+- `switch()` - use instead of `ifelse()` or `if()` statements. 
 - `match.arg()` for a vector of character, match first or belonging to.
 - Using air formatter
 - R-CMD-check.yaml for auto checking  - `use_github_action()`
-- multiple && for if statements
+- multiple `&&` for `if` statements
 - use `@noRd` tag in R function code instead of `@export` for utility functions that you don't want the user to see
-- `withr::local_seed(67)`  set a seed within a function environment
-
-## debugging
-
-- `browser()` for writing/debugging. 
-- Error inspector option
-- `rlang::last_trace()` and `rlang::last_error()`
+- `withr::local_seed(67)` to set seed only within function call
 
 
 
