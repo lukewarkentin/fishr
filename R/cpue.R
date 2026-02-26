@@ -29,6 +29,37 @@ cpue <- function(
   method <- match.arg(method)
 
   raw_cpue <- switch(method, ratio = catch / effort, log = log(catch / effort))
+  result <- new_cpue_result(
+    values = raw_cpue * gear_factor,
+    method = method,
+    gear_factor = gear_factor,
+    n_records = length(catch)
+  )
 
-  raw_cpue * gear_factor
+  result
+}
+
+#' @export
+print.cpue_result <- function(x, ...) {
+  cat("Survey Result Summary\n")
+  cat("---------------------\n")
+  cat("Method: ", attr(x, "method"), "\n")
+  cat("Gear factor: ", attr(x, "gear_factor"), "\n")
+  cat("Records", attr(x, "n_records"), "\n") # cat() prints text to the console
+  cat("Mean CPUE: ", round(mean(x), 2), "\n")
+  cat("SD CPUE: ", round(stats::sd(x), 2), "\n")
+  invisible(x) # this is so you can still assign things to the result
+}
+
+
+# Constructor function: add attributes to the result
+new_cpue_result <- function(values, method, gear_factor, n_records) {
+  structure(
+    # way to add attributes to an object
+    values,
+    method = method,
+    gear_factor = gear_factor,
+    n_records = n_records,
+    class = "cpue_result"
+  )
 }

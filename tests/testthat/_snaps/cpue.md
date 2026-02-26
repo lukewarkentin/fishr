@@ -14,7 +14,13 @@
       Warning in `catch / effort`:
       longer object length is not a multiple of shorter object length
     Output
-      [1] 10 10 30
+      Survey Result Summary
+      ---------------------
+      Method:  ratio 
+      Gear factor:  1 
+      Records 3 
+      Mean CPUE:  16.67 
+      SD CPUE:  11.55 
 
 # cpue uses verbosity when option set to TRUE
 
@@ -23,5 +29,24 @@
     Message
       Processing 1 records.
     Output
-      [1] 10
+      Survey Result Summary
+      ---------------------
+      Method:  ratio 
+      Gear factor:  1 
+      Records 1 
+      Mean CPUE:  10 
+      SD CPUE:  NA 
+
+# print.cpue_result displays expected output
+
+    Code
+      print(result)
+    Output
+      Survey Result Summary
+      ---------------------
+      Method:  ratio 
+      Gear factor:  1 
+      Records 3 
+      Mean CPUE:  13.33 
+      SD CPUE:  5.77 
 
