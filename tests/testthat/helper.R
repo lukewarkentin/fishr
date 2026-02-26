@@ -9,3 +9,8 @@ generate_fishing_data <- function(n = 10) {
     gear_factor = runif(n, 0.5, 1)
   )
 }
+
+
+expect_equal_numbers <- function(object, expected, ...) {
+  expect_equal(object, expected, ignore_attr = TRUE, ...)
+}

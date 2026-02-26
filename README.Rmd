@@ -63,3 +63,8 @@ cpue(catch = 100, effort = 10, gear_factor = 0.5)
 - `browser()` for writing/debugging. 
 - Error inspector option
 - `rlang::last_trace()` and `rlang::last_error()`
+
+
+# Documentation
+
+- @rdname ??
