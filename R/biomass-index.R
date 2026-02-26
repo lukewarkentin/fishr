@@ -3,9 +3,10 @@
 #' See [cpue()] for more details.
 #'
 #' @param cpue Numeric vector of CPUE values
+#' @param catch  Numeric vector of catch
 #' @param area_swept Numeric vector of area swept ( e.g., km^2)
 #' @param verbose Logical, if TRUE, prints messaging. Default is FALSE
-#' @inheritParams cpue
+#' @inheritParams cpue.numeric
 #' @inheritDotParams cpue
 #'
 #' @returns A numeric vector of biomass index values

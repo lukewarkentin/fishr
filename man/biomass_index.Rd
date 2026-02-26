@@ -18,7 +18,7 @@ biomass_index(
 
 \item{area_swept}{Numeric vector of area swept ( e.g., km^2)}
 
-\item{catch}{Numeric vector of catch}
+\item{catch}{Numeric vector of catch, or data.frame with "catch" and "effort" columns}
 
 \item{effort}{Numeric vector of effort}
 
@@ -27,8 +27,7 @@ biomass_index(
 \item{...}{
   Arguments passed on to \code{\link[=cpue]{cpue}}
   \describe{
-    \item{\code{gear_factor}}{Numeric vector for gear standardize}
-    \item{\code{method}}{Character; one of "ratio" or "log".}
+    \item{\code{}}{}
   }}
 }
 \value{

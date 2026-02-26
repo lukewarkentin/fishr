@@ -38,14 +38,26 @@ devtools::load_all()
 cpue(catch = 100, effort = 10)
 ```
 
-    ## [1] 10
+    ## Survey Result Summary
+    ## ---------------------
+    ## Method:  ratio 
+    ## Gear factor:  1 
+    ## Records 1 
+    ## Mean CPUE:  10 
+    ## SD CPUE:  NA
 
 ``` r
 # With gear standardization
 cpue(catch = 100, effort = 10, gear_factor = 0.5)
 ```
 
-    ## [1] 5
+    ## Survey Result Summary
+    ## ---------------------
+    ## Method:  ratio 
+    ## Gear factor:  0.5 
+    ## Records 1 
+    ## Mean CPUE:  5 
+    ## SD CPUE:  NA
 
 ## highlights / notes to remember
 
@@ -70,3 +82,7 @@ cpue(catch = 100, effort = 10, gear_factor = 0.5)
 - `browser()` for writing/debugging.
 - Error inspector option
 - `rlang::last_trace()` and `rlang::last_error()`
+
+# Documentation
+
+- @rdname ??
